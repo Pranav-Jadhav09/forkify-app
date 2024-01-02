@@ -1,5 +1,6 @@
 #misc
-.DS_Store
 .env
+dist
+.DS_Store
 node_modules
 .parcel-cache
