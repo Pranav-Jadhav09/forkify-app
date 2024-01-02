@@ -13,5 +13,3 @@
 | Access to bookmarks and recipes when leaving the app and coming back later | <ul><li>Store bookmark data in the browser using "local storage"</ul>                                                                                                                 |
 
 ---
-
-### Flowchart & Architecture
