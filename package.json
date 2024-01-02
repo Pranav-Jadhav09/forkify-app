@@ -1,7 +1,7 @@
 {
   "name": "forkify",
   "version": "1.0.0",
-  "description": "food recipe application",
+  "description": "Forkify is a recipe web app that allows users to search, view, modify, bookmark and add recipes.",
   "scripts": {
     "start": "parcel ./index.html",
     "build": "parcel build index.html"
