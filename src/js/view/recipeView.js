@@ -151,7 +151,7 @@ class RecipeView {
     `;
   }
 
-  #generateMarkupIngredient(ing) {
+  _generateMarkupIngredient(ing) {
     return `<li class="recipe__ingredient">
   <svg class="recipe__icon">
     <use href="${icons}#icon-check"></use>
