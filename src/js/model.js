@@ -80,12 +80,18 @@ export const updateServings = function (newServings) {
   state.recipe.servings = newServings;
 };
 
+const persistBookamrks = function () {
+  localStorage.setItem("bookmarks", JSON.stringify(state.bookmarks));
+};
+
 export const addBookmark = function (recipe) {
   // Add bookamrk
   state.bookmarks.push(recipe);
 
   // Mark Current recipe as bookmarked
   if (recipe.id === state.recipe.id) state.recipe.bookmarked = true;
+
+  persistBookamrks();
 };
 
 export const deleteBookmark = function (id) {
@@ -95,4 +101,17 @@ export const deleteBookmark = function (id) {
 
   // Mark Current recipe as NOT a bookmarked
   if (id === state.recipe.id) state.recipe.bookmarked = false;
+
+  persistBookamrks();
 };
+
+const init = function () {
+  const storage = localStorage.getItem("bookmarks");
+  if (storage) state.bookmarks = JSON.parse(storage);
+};
+// init();
+
+const clearBookmarks = function () {
+  localStorage.clear("bookmarks");
+};
+// clearBookmarks();

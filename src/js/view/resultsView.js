@@ -8,7 +8,6 @@ class ResultsView extends View {
   _message = `Start by searching for a recipe or an ingredient. Have fun!`;
 
   _generaterMarkup() {
-    console.log(this._data);
     return this._data
       .map((result) => previewView.render(result, false))
       .join("");

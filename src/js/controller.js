@@ -10,10 +10,6 @@ import "regenerator-runtime/runtime";
 
 const { async } = require("regenerator-runtime");
 
-// if (module.hot) {
-//   module.hot.accept();
-// }
-
 const controlRecipes = async function () {
   try {
     const id = window.location.hash.slice(1);
@@ -23,6 +19,7 @@ const controlRecipes = async function () {
 
     // 0) Update results to mark selected search result
     resultsView.update(model.getSearchResultsPage());
+    // Updating
     bookmarksView.update(model.state.bookmarks);
 
     // 1) Loading Recipe
@@ -32,6 +29,7 @@ const controlRecipes = async function () {
     recipeView.render(model.state.recipe);
   } catch (err) {
     recipeView.renderError();
+    console.error(err);
   }
 };
 
@@ -86,7 +84,12 @@ const controlAddBookamrk = function () {
   bookmarksView.render(model.state.bookmarks);
 };
 
+const controlBookmarks = function () {
+  bookmarksView.render(model.state.bookmarks);
+};
+
 const init = function () {
+  bookmarksView.addHandlerRender(controlBookmarks);
   recipeView.addHandlerRender(controlRecipes);
   recipeView.addHandlerUpdateServings(controlServings);
   recipeView.addHandlerAddBookmark(controlAddBookamrk);
