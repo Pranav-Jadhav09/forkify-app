@@ -5,7 +5,7 @@ import { Fraction } from "../../../node_modules/fractional";
 class RecipeView extends View {
   _parentEl = document.querySelector(".recipe");
   _errorMessage = `We could not find that recipe, Please try another one!`;
-  _message = `Start by searching for a recipe or an ingredient. Have fun!`;
+  _message = ``;
 
   addHandlerRender(handler) {
     ["hashchange", "load"].forEach((ev) =>
@@ -18,8 +18,9 @@ class RecipeView extends View {
       const btn = e.target.closest(".btn--update-servings");
 
       if (!btn) return;
-
       const { updateTo } = btn.dataset;
+
+      // Should Serve atleast one
       if (+updateTo > 0) handler(+updateTo);
     });
   }
@@ -27,13 +28,12 @@ class RecipeView extends View {
   addHandlerAddBookmark(handler) {
     this._parentEl.addEventListener("click", function (e) {
       const btn = e.target.closest(".btn--bookmark");
-
       if (!btn) return;
       handler();
     });
   }
 
-  _generaterMarkup() {
+  _generateMarkup() {
     return `
     <figure class="recipe__fig">
     <img src="${this._data.image}" alt="${

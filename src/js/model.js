@@ -15,6 +15,7 @@ export const state = {
 
 const createRecipeObj = function (data) {
   const { recipe } = data.data;
+
   return {
     id: recipe.id,
     title: recipe.title,
@@ -44,6 +45,7 @@ export const loadRecipe = async function (id) {
   }
 };
 
+// Search Functionality
 export const loadSearchResults = async function (query) {
   try {
     state.search.query = query;
@@ -62,7 +64,7 @@ export const loadSearchResults = async function (query) {
 
     state.search.page = 1;
   } catch (err) {
-    console.error(`${err} 🤯`);
+    console.error(`${err} 💥💥💥💥`);
     throw err;
   }
 };
@@ -72,19 +74,20 @@ export const getSearchResultsPage = function (page = state.search.page) {
 
   const start = (page - 1) * state.search.resultsPerPage;
   const end = page * state.search.resultsPerPage;
+
   return state.search.results.slice(start, end);
 };
 
 export const updateServings = function (newServings) {
   state.recipe.ingredients.forEach((ing) => {
+    // newQTY = oldQTY * newServings / oldServings
     ing.quantity = ing.quantity * (newServings / state.recipe.servings);
-    // new qty = oldqty * newServings/ oldservings // 2 * 8/4 = 4
   });
 
   state.recipe.servings = newServings;
 };
 
-const persistBookamrks = function () {
+const persistBookmarks = function () {
   localStorage.setItem("bookmarks", JSON.stringify(state.bookmarks));
 };
 
@@ -92,10 +95,11 @@ export const addBookmark = function (recipe) {
   // Add bookamrk
   state.bookmarks.push(recipe);
 
-  // Mark Current recipe as bookmarked
+  // Mark current recipe as bookmarked (icon marked)
   if (recipe.id === state.recipe.id) state.recipe.bookmarked = true;
 
-  persistBookamrks();
+  // Store in localStorage
+  persistBookmarks();
 };
 
 export const deleteBookmark = function (id) {
@@ -103,10 +107,11 @@ export const deleteBookmark = function (id) {
   const index = state.bookmarks.findIndex((el) => el.id === id);
   state.bookmarks.splice(index, 1);
 
-  // Mark Current recipe as NOT a bookmarked
+  // Mark current recipe as NOT bookmarked (icon marked)
   if (id === state.recipe.id) state.recipe.bookmarked = false;
 
-  persistBookamrks();
+  // Delete From localStorage
+  persistBookmarks();
 };
 
 const init = function () {
@@ -150,7 +155,6 @@ export const uploadRecipe = async function (newRecipe) {
     // Sending Recipe Data to API
     const data = await AJAX(`${API_URL}?key=${API_KEY}`, recipe);
     state.recipe = createRecipeObj(data);
-
     addBookmark(state.recipe);
   } catch (err) {
     throw err;

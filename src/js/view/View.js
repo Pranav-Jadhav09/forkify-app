@@ -8,7 +8,7 @@ export default class View {
       return this.renderError();
 
     this._data = data;
-    const markup = this._generaterMarkup();
+    const markup = this._generateMarkup();
 
     if (!render) return markup;
 
@@ -16,10 +16,10 @@ export default class View {
     this._parentEl.insertAdjacentHTML("afterbegin", markup);
   }
 
-  // DOM updating Algorithm
+  // Algorithm - To update DOM only in places where it is changed
   update(data) {
     this._data = data;
-    const newMarkup = this._generaterMarkup();
+    const newMarkup = this._generateMarkup();
 
     const newDOM = document.createRange().createContextualFragment(newMarkup);
     const newElements = Array.from(newDOM.querySelectorAll("*"));

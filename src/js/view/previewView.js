@@ -4,13 +4,13 @@ import icons from "url:../../assets/icons.svg";
 class PreviewView extends View {
   _parentEl = "";
 
-  _generaterMarkup() {
+  _generateMarkup() {
     const id = window.location.hash.slice(1);
 
     return `<li class="preview">
-    <a href="#${this._data.id}" class="preview__link ${
+    <a  class="preview__link ${
       this._data.id === id ? "preview__link--active" : ""
-    }"> 
+    }" href="#${this._data.id}" > 
       <figure class="preview__fig">
         <img src="${this._data.image}" alt="${this._data.title}" />
       </figure>

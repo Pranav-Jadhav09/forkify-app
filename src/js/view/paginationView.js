@@ -7,16 +7,14 @@ class PagintionView extends View {
   addHandlerClick(handler) {
     this._parentEl.addEventListener("click", function (e) {
       const btn = e.target.closest(".btn--inline");
-
       if (!btn) return;
 
       const goToPage = +btn.dataset.goto;
-
       handler(goToPage);
     });
   }
 
-  _generaterMarkup() {
+  _generateMarkup() {
     const currentPage = this._data.page;
     const numPages = Math.ceil(
       this._data.results.length / this._data.resultsPerPage

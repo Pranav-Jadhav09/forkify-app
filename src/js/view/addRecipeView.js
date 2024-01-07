@@ -1,6 +1,4 @@
 import View from "./View";
-import icons from "url:../../assets/icons.svg";
-import { Handler } from "leaflet";
 
 class AddRecipeView extends View {
   _overlay = document.querySelector(".overlay");
@@ -42,6 +40,6 @@ class AddRecipeView extends View {
     });
   }
 
-  _generaterMarkup() {}
+  _generateMarkup() {}
 }
 export default new AddRecipeView();
