@@ -1,10 +1,11 @@
 import View from "./View";
 import icons from "url:../../assets/icons.svg";
+import { Handler } from "leaflet";
 
 class AddRecipeView extends View {
   _overlay = document.querySelector(".overlay");
   _message = `Recipe was succesfully uploaded :)`;
-  _parentElement = document.querySelector(".upload");
+  _parentEl = document.querySelector(".upload");
   _window = document.querySelector(".add-recipe-window");
   _btnClose = document.querySelector(".btn--close-modal");
   _btnOpen = document.querySelector(".nav__btn--add-recipe");
@@ -28,6 +29,17 @@ class AddRecipeView extends View {
   _addHandlerHideWindow() {
     this._btnClose.addEventListener("click", this.toggleWindow.bind(this));
     this._overlay.addEventListener("click", this.toggleWindow.bind(this));
+  }
+
+  // Upload Feature - Form Submission
+  addHandlerUpload(handler) {
+    this._parentEl.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const dataArr = [...new FormData(this)];
+      const data = Object.fromEntries(dataArr);
+      handler(data);
+    });
   }
 
   _generaterMarkup() {}
