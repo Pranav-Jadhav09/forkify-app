@@ -2,9 +2,10 @@
   "name": "forkify",
   "version": "1.0.0",
   "description": "Forkify is a recipe web app that allows users to search, view, modify, bookmark and add recipes.",
+  "default": "index.html",
   "scripts": {
     "start": "parcel ./index.html",
-    "build": "parcel build index.html --dist-dir ./dist"
+    "build": "parcel build index.html --no-scope-hoist --dist-dir ./dist"
   },
   "author": "jrpranav",
   "license": "ISC",
