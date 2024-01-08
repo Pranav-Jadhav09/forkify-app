@@ -9,7 +9,7 @@
 
 Forkify is a recipe web app that allows users to search, view, modify, bookmark and add recipes.
 
-<a href="https://forkify-app.onrender.com/"><strong>➥ Live Demo</strong></a>
+<a href="https://forkify-app-jrpranav.onrender.com"><strong>➥ Live Demo</strong></a>
 
 </div>
 
@@ -42,7 +42,7 @@ Forkify is a recipe web app that allows users to search, view, modify, bookmark 
 
 ## Getting Started
 
-This project require some prequesites and dependenscies to be installed, you can view it online using this [demo](https://forkify-app.onrender.com). or you can find the instructions below
+This project require some prequesites and dependenscies to be installed, you can view it online using this [demo](https://forkify-app-jrpranav.onrender.com). or you can find the instructions below
 
 > To get a local copy, follow these simple steps :
 
