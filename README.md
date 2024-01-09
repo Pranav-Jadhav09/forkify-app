@@ -69,6 +69,13 @@ npm run start
 
 <br />
 
+## Deployed
+
+- `Vercel` - [Live](https://forkify-app-modern.vercel.app/)
+- `Onrender` - [Live](https://forkify-app-jrpranav.onrender.com)
+
+<br />
+
 ## Contributing
 
 Contributions to this project are welcome! Feel free to submit pull requests or open issues for any improvements or features you'd like to add.
