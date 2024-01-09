@@ -10,7 +10,8 @@
 
 Forkify is a recipe web app that allows users to search, view, modify, bookmark and add recipes.
 
-<a href="https://forkify-app-jrpranav.onrender.com"><strong>➥ Live Demo</strong></a>
+<a href="https://forkify-app-modern.vercel.app/"><strong>➥ Live on vercel.app</strong></a> <br />
+<a href="https://forkify-app-jrpranav.onrender.com"><strong>➥ Live on render.com</strong></a>
 
 </div>
 
@@ -65,13 +66,6 @@ npm install
 ```bash
 npm run start
 ```
-
-<br />
-
-## Deployed
-
-- `Vercel` - [Live](https://forkify-app-modern.vercel.app/)
-- `Onrender` - [Live](https://forkify-app-jrpranav.onrender.com)
 
 <br />
 
