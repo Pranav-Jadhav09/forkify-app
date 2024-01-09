@@ -2,6 +2,7 @@
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 ![GitHub repo size](https://img.shields.io/github/repo-size/Pranav-Jadhav09/forkify-app)
+[![Twitter Follow](https://img.shields.io/twitter/follow/Pranav_Jadhav09?style=social)](https://twitter.com/Pranav_Jadhav09)
 
 <img src="./src/assets/favicon.png" alt="Logo" height="80"  >
 
@@ -65,3 +66,15 @@ npm install
 ```bash
 npm run start
 ```
+
+<br />
+
+## Contributing
+
+Contributions to this project are welcome! Feel free to submit pull requests or open issues for any improvements or features you'd like to add.
+
+<br />
+
+## License
+
+This project is licensed under [MIT License](./LICENSE).
