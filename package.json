@@ -8,7 +8,7 @@
     "build": "parcel build index.html --no-scope-hoist --dist-dir ./dist"
   },
   "author": "jrpranav",
-  "license": "ISC",
+  "license": "GPL-3.0 license",
   "devDependencies": {
     "@parcel/transformer-sass": "^2.10.3",
     "parcel": "^2.10.3"
