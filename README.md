@@ -89,4 +89,4 @@ Contributions to this project are welcome! Feel free to submit pull requests or 
 
 ## License
 
-This project is licensed under [MIT License](./LICENSE).
+This project is licensed under [GNU GENERAL PUBLIC LICENSE](./LICENSE).
